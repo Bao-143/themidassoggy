@@ -13,5 +13,12 @@
 	"description": "Make you whenever touch a button, it make the button texture turn into soggy image",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
+	},
+	{
+    "resources": {
+        "sprites": [
+            "resources/soggy.png"
+        	]
+    	}
 	}
 }
