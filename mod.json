@@ -9,9 +9,7 @@
 	"version": "v1.1.8",
 	"id": "bao143.midassoggy",
 	"name": "Midas Soggy",
-	"developer": [
-		"Bao143"
-	],
+	"developer": "Bao143",
 	"description": "Midas but soggy!!!!",
 	"resources": {
 		"sprites": [
