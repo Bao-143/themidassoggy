@@ -20,5 +20,8 @@
             "resources/soggy.png"
         	]
     	}
+	},
+	{
+		"tags": "jokes"
 	}
 }
