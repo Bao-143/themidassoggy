@@ -1,17 +1,21 @@
+#include <Geode/Geode.hpp>
 #include <Geode/modify/CCMenuItemSprite.hpp>
 
+using namespace geode::prelude;
+
 class $modify(MyButtonHook, CCMenuItemSprite) {
-void selected() {
-    CCMenuItemSprite::selected();
+    void selected() {
+        CCMenuItemSprite::selected();
 
-    FMODAudioEngine::sharedEngine()->playEffect("honk.wav");
+        FMODAudioEngine::sharedEngine()->playEffect("honk.wav");
 
-    auto sprite = this->getNormalImage();
-    if (sprite) {
-        auto tex = CCTextureCache::sharedTextureCache()
-            ->addImage("soggy.png");
+        if (auto sprite = typeinfo_cast<CCSprite*>(this->getNormalImage())) {
+            auto texCache = CCTextureCache::sharedTextureCache();
+            auto newTexture = texCache->addImage("soggy.png");
 
-        sprite->setTexture(tex);
+            if (newTexture) {
+                sprite->setTexture(newTexture);
+            }
+        }
     }
-}
 };
