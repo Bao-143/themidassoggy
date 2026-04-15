@@ -11,7 +11,7 @@ class $modify(MyButtonHook, CCMenuItemSprite) {
 
         if (auto sprite = typeinfo_cast<CCSprite*>(this->getNormalImage())) {
             auto texCache = CCTextureCache::sharedTextureCache();
-            auto newTexture = texCache->addImage("soggy.png", false);
+            auto newTexture = texCache->addImage("soggycat.png", false);
 
             if (newTexture) {
                 sprite->setTexture(newTexture);
