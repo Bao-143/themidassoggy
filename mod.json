@@ -11,21 +11,32 @@
 	"name": "Midas Soggy",
 	"developer": "Bao143",
 	"description": "Midas but soggy!!!!",
+	"links": {
+		"source": "https://github.com/BaoIsCoding/themidassoggy/"
+	},
 	"resources": {
 		"sprites": [
-		    "resources/soggycat.png"
+			"resources/*.png"
 		],
 		"files": [
-			"resources/honk.wav"
+			"resources/*.wav",
 		]
 	},
 	"dependencies": {
 		"geode.node-ids": {
 			"version": "v1.21.0",
 			"importance": "required"
-		}
+		},
+		"capeling.soggy-mod": ">=1.1.8"
 	},
 	"tags": [
 		"joke"
-	]
+	],
+		"settings": {
+			"disable": {
+				"name": "Disable",
+				"description": "Disables the mod completely.",
+				"type": "bool",
+				"default": false
+			}
 }
