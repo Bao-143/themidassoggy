@@ -28,12 +28,5 @@
 	},
 	"tags": [
 		"joke"
-	],
-		"settings": {
-			"disable": {
-				"name": "Disable",
-				"description": "Disables the mod completely(Baddest thig)",
-				"type": "bool",
-				"default": false
-			}
+	]
 }
