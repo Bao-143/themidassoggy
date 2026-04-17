@@ -7,10 +7,8 @@ class $modify(MyButtonHook, CCMenuItemSpriteExtra) {
 
     void selected() {
         CCMenuItemSpriteExtra::selected();
-            if (auto spr = CCSprite::create("soggycat.png"_spr)) {
-            this->setSprite(spr);
-            this->updateSprite();
+        if (auto frame = CCSpriteFrameCache::get()->spriteFrameByName("whatever")) {
+            sprite->setDisplayFrame(frame);
         }
-    sprite->setDisplayFrame(CCSpriteFrameCache::get()->spriteFrameByName("soggycat.png"))
     }
 };
