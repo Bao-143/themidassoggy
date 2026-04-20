@@ -6,15 +6,23 @@ class $modify(MyButtonHook, CCMenuItemSpriteExtra) {
     void selected() {
         CCMenuItemSpriteExtra::selected();
 
-        if (auto sprite = typeinfo_cast<CCSprite*>(this->getNormalImage())) {
-            if (auto tex = CCTextureCache::sharedTextureCache()->addImage("soggycat.png", false)) {
-                sprite->setTexture(tex);
-                sprite->setTextureRect(CCRectMake(
-                    0, 0,
-                    tex->getPixelsWide(),
-                    tex->getPixelsHigh()
-                ));
-            }
+        auto sprite = this->getNormalImage();
+        if (!sprite) return;
+
+        auto newSpr = CCSprite::create("soggycat.png");
+        if (!newSpr) return;
+
+        sprite->setVisible(false);
+
+        if (!this->getChildByTag(999)) {
+            newSpr->setPosition(sprite->getPosition());
+            newSpr->setScale(sprite->getScale());
+            newSpr->setTag(999);
+            this->addChild(newSpr);
         }
     }
-};
+
+    void unselected() {
+        CCMenuItemSpriteExtra::unselected();
+
+        auto sprite = this->get
